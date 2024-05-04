@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_own_e_commerce_app/Features/Authentication/view/login_view.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
 import 'package:my_own_e_commerce_app/core/widgets/custom_buttom.dart';
 
@@ -17,20 +16,22 @@ class LoginAndSignupButtoms extends StatelessWidget {
           child: CustomButtom(
             onTap: () {
               GoRouter.of(context).push(
-                AppRouter.loginView,
+                AppRouter.signInView,
               );
             },
             textcolor: Colors.white,
             title: 'Sign in',
-            color: const Color.fromARGB(255, 3, 9, 45),
+            color: const Color.fromARGB(255, 3, 10, 45).withOpacity(0.5),
             borderRadius:
                 const BorderRadius.only(topRight: Radius.circular(16)),
           ),
         ),
         Expanded(
           child: CustomButtom(
-            onTap: () {},
-            textcolor: Colors.blue,
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.signUpView);
+            },
+            textcolor: Colors.blue.shade900,
             title: 'Sign up',
             color: Colors.white,
             borderRadius: const BorderRadius.only(topLeft: Radius.circular(16)),
