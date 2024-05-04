@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: 16,
+          height: 24,
         ),
         IconButton(
             onPressed: () {
