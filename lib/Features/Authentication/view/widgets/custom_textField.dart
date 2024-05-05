@@ -22,6 +22,8 @@ class _CustomFormTextFieldState extends State<CustomFormTextField> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'This Field is required';
+        } else {
+          return null;
         }
       },
       onChanged: widget.onChange,

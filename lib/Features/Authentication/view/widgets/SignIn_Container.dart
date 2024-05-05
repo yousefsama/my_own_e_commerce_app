@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/custom_divider.dart';
+import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/dont_have_an_account_row.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/login_with_another_account.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/signin_form.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
 
 class SignInFullContainer extends StatelessWidget {
   const SignInFullContainer({
@@ -27,26 +26,7 @@ class SignInFullContainer extends StatelessWidget {
         const CustomDivider(text: ' Sign in With '),
         const LoginWithAnotherAccountListView(),
         const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Don't have an account ?  ",
-              style: TextStyle(color: Colors.grey),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-                GoRouter.of(context).push(AppRouter.signUpView);
-              },
-              child: Text(
-                "Sign up",
-                style: TextStyle(
-                    color: Colors.blue.shade900, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ],
-        ),
+        const DontHaveAnAccountRow(),
       ],
     );
   }

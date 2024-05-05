@@ -77,11 +77,16 @@ class _SignInFormState extends State<SignInForm> {
                 ),
               ),
               const Spacer(),
-              Text(
-                'Forget Password ?',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue.shade900,
+              TextButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.forgetPasswordView);
+                },
+                child: Text(
+                  'Forget Password ?',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue.shade900,
+                  ),
                 ),
               ),
             ],
