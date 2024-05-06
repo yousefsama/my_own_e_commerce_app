@@ -21,11 +21,11 @@ class CustomButtom extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(color: color, borderRadius: borderRadius),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
+          padding: const EdgeInsets.symmetric(vertical: 25.0),
           child: Text(
             title,
             style: TextStyle(
-                color: textcolor, fontSize: 16, fontWeight: FontWeight.bold),
+                color: textcolor, fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
       ),

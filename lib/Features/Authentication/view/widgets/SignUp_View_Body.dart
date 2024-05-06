@@ -5,7 +5,7 @@ import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/custo
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/custom_background_container.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/custom_divider.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/login_with_another_account.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
+import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});

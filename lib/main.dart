@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
+import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

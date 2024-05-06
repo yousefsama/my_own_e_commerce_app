@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
+import 'package:my_own_e_commerce_app/core/utils/assetsImage.dart';
 
 class CustomBackgroundContainer extends StatelessWidget {
   const CustomBackgroundContainer({

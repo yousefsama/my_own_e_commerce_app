@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/custom_textField.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
+import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 import 'package:my_own_e_commerce_app/core/widgets/custom_buttom.dart';
 import 'package:quickalert/quickalert.dart';
 
@@ -29,6 +29,7 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Column(
         children: [
           CustomFormTextField(
+            keyboardType: TextInputType.name,
             onChange: (p0) {},
             label: 'Full Name',
             hintText: 'Enter Your Full Name',
@@ -36,6 +37,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const SizedBox(height: 16),
           CustomFormTextField(
+            keyboardType: TextInputType.emailAddress,
             onChange: (value) {
               email = value;
             },
@@ -45,6 +47,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const SizedBox(height: 16),
           CustomFormTextField(
+            keyboardType: TextInputType.visiblePassword,
             onChange: (value) {
               password = value;
             },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_own_e_commerce_app/core/utils/assets/Go_Router.dart';
+import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 
 class DontHaveAnAccountRow extends StatelessWidget {
   const DontHaveAnAccountRow({
