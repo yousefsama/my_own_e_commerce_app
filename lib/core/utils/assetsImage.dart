@@ -1,13 +1,18 @@
+// ignore: duplicate_ignore
+// ignore: file_names
+// ignore_for_file: file_names
+
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAppleLogo
   /// assets/images/appleLogo.svg
   static const String imagesAppleLogo = "assets/images/appleLogo.svg";
 
   /// Assets for imagesBackgroundImage
   /// assets/images/BackgroundImage.png
-  static const String imagesBackgroundImage = "assets/images/BackgroundImage.png";
+  static const String imagesBackgroundImage =
+      "assets/images/BackgroundImage.png";
 
   /// Assets for imagesFacebookLogo
   /// assets/images/facebookLogo.svg
@@ -25,4 +30,3 @@ class Assets {
   /// assets/images/twitterLogo.svg
   static const String imagesTwitterLogo = "assets/images/twitterLogo.svg";
 }
-

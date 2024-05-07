@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/widgets/Signup_form.dart';

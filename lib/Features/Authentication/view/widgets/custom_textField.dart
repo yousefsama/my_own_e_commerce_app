@@ -1,16 +1,18 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CustomFormTextField extends StatefulWidget {
   const CustomFormTextField(
       {super.key,
-      required this.hintText,
-      required this.label,
+      this.hintText,
+      this.label,
       required this.isPassWord,
-      required this.onChange,
+      this.onChange,
       this.keyboardType});
-  final String hintText, label;
+  final String? hintText, label;
   final bool isPassWord;
-  final void Function(String) onChange;
+  final void Function(String)? onChange;
   final TextInputType? keyboardType;
 
   @override
@@ -33,7 +35,7 @@ class _CustomFormTextFieldState extends State<CustomFormTextField> {
       obscureText: widget.isPassWord,
       decoration: InputDecoration(
           hintText: widget.hintText,
-          label: Text(widget.label),
+          label: Text(widget.label ?? ''),
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder()),

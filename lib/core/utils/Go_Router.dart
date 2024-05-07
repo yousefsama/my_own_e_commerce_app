@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/forget_password_view.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/signup_view.dart';
@@ -6,7 +8,6 @@ import 'package:my_own_e_commerce_app/Features/Authentication/view/signin_view.d
 import 'package:my_own_e_commerce_app/Features/Home/view/home_view.dart';
 
 abstract class AppRouter {
-  static const kHomeView = '/homeView';
   static const signInView = '/loginView';
 
   static const signUpView = '/signUpView';
@@ -17,7 +18,8 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const SplashView(),
+        builder: (context, state) =>
+            const HomeView(), // convert it to splashView
       ),
       GoRoute(
         path: signInView,
