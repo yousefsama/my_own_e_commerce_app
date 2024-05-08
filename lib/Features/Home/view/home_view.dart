@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/collection_view_body.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/home_view_body.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 import 'package:svg_flutter/svg.dart';
@@ -74,9 +75,7 @@ class NavigationController extends GetxController {
   final RxInt selectedIndex = 0.obs;
   final screens = [
     const HomeViewBody(),
-    Container(
-      color: Colors.green,
-    ),
+    const SizedBox(),
     Container(
       color: Colors.yellow,
     ),
