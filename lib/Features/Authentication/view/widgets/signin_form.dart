@@ -102,6 +102,7 @@ class _SignInFormState extends State<SignInForm> {
               onTap: () async {
                 if (formKey.currentState!.validate()) {
                   try {
+                    // ignore: unused_local_variable
                     final credential = await FirebaseAuth.instance
                         .signInWithEmailAndPassword(
                             email: email, password: password);
@@ -117,20 +118,30 @@ class _SignInFormState extends State<SignInForm> {
                         text: 'Lets shopping now ?');
                   } on FirebaseAuthException catch (e) {
                     if (e.code == 'user-not-found') {
-                      log('No user found for that email.');
                       QuickAlert.show(
                           context: context,
                           type: QuickAlertType.error,
                           title: 'Error',
                           text: 'No user found for that email.');
                     } else if (e.code == 'wrong-password') {
-                      log('Wrong password provided for that user.');
                       QuickAlert.show(
                           context: context,
                           type: QuickAlertType.error,
                           title: 'Wrong',
                           text: 'Wrong password provided for that user.');
+                    } else {
+                      QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.error,
+                          title: 'Wrong',
+                          text: "the email address is badly formatted");
                     }
+                  } catch (e) {
+                    QuickAlert.show(
+                        context: context,
+                        type: QuickAlertType.error,
+                        title: 'Wrong',
+                        text: e.toString());
                   }
                 } else {
                   autovalidateMode = AutovalidateMode.always;

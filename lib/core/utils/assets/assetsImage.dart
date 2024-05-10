@@ -21,6 +21,10 @@ class Assets {
   /// assets/images/ArrowRightIcon.svg
   static const String imagesArrowRightIcon = "assets/images/ArrowRightIcon.svg";
 
+  /// Assets for imagesArrowleft
+  /// assets/images/arrowleft.svg
+  static const String imagesArrowleft = "assets/images/arrowleft.svg";
+
   /// Assets for imagesBackgroundImage
   /// assets/images/BackgroundImage.png
   static const String imagesBackgroundImage = "assets/images/BackgroundImage.png";
@@ -69,13 +73,33 @@ class Assets {
   /// assets/images/Logo.svg
   static const String imagesLogo = "assets/images/Logo.svg";
 
+  /// Assets for imagesLove
+  /// assets/images/love.svg
+  static const String imagesLove = "assets/images/love.svg";
+
+  /// Assets for imagesLovedIcon
+  /// assets/images/LovedIcon.svg
+  static const String imagesLovedIcon = "assets/images/LovedIcon.svg";
+
   /// Assets for imagesMinusIcon
   /// assets/images/minusIcon.svg
   static const String imagesMinusIcon = "assets/images/minusIcon.svg";
 
+  /// Assets for imagesMoreImage
+  /// assets/images/moreImage.png
+  static const String imagesMoreImage = "assets/images/moreImage.png";
+
+  /// Assets for imagesMoreImageTest
+  /// assets/images/moreImageTest.svg
+  static const String imagesMoreImageTest = "assets/images/moreImageTest.svg";
+
   /// Assets for imagesPlusIcon
   /// assets/images/plus_Icon.svg
   static const String imagesPlusIcon = "assets/images/plus_Icon.svg";
+
+  /// Assets for imagesProductInfoTest
+  /// assets/images/productInfoTest.png
+  static const String imagesProductInfoTest = "assets/images/productInfoTest.png";
 
   /// Assets for imagesProductTestImage
   /// assets/images/ProductTestImage.png
@@ -92,6 +116,10 @@ class Assets {
   /// Assets for imagesShoppingBag
   /// assets/images/shopping-bag.svg
   static const String imagesShoppingBag = "assets/images/shopping-bag.svg";
+
+  /// Assets for imagesSolidLove
+  /// assets/images/solidLove.svg
+  static const String imagesSolidLove = "assets/images/solidLove.svg";
 
   /// Assets for imagesTwitterLogo
   /// assets/images/twitterLogo.svg

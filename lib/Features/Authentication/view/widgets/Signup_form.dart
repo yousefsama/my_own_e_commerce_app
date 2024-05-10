@@ -132,6 +132,13 @@ class _SignUpFormState extends State<SignUpForm> {
         title: 'Error',
         text: 'The account already exists for that email.',
       );
+    } else {
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.error,
+        title: 'Error',
+        text: e.toString(),
+      );
     }
   }
 

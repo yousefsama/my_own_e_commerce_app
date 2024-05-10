@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_own_e_commerce_app/Features/Home/view/widget/collection_view_body.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/home_view_body.dart';
+import 'package:my_own_e_commerce_app/constance.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     return Scaffold(
-      backgroundColor: const Color(0xffF2F2F2),
+      backgroundColor: Constance.primaryBackGroundColor,
       bottomNavigationBar: Obx(
         () => NavigationBar(
             labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
-            backgroundColor: const Color(0xff4C4C4C),
+            backgroundColor: const Color(0xff4C4C4C).withOpacity(0.6),
             destinations: [
               NavigationDestination(
                   icon: SvgPicture.asset(

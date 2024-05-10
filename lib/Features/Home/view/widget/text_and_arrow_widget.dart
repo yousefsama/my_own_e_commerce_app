@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/constance.dart';
 
 class CustomTextAndArrow extends StatelessWidget {
   const CustomTextAndArrow({
@@ -22,7 +23,7 @@ class CustomTextAndArrow extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: icon,
-          color: const Color(0xffF26F3F),
+          color: Constance.orangeColor,
         ),
       ],
     );

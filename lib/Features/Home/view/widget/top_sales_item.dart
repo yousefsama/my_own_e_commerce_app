@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/Love_and_notLoveIcon.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
-class TopSalesItem extends StatelessWidget {
-  const TopSalesItem({super.key});
+class TopSalesItem extends StatefulWidget {
+  const TopSalesItem({
+    super.key,
+  });
 
+  @override
+  State<TopSalesItem> createState() => _TopSalesItemState();
+}
+
+class _TopSalesItemState extends State<TopSalesItem> {
+  bool isLoved = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -34,13 +42,22 @@ class TopSalesItem extends StatelessWidget {
                 style: AppStyle.medium18Black
                     .copyWith(fontWeight: FontWeight.w600, color: Colors.grey),
               ),
-              trailing: SvgPicture.asset(
-                Assets.imagesHeartIcon2,
-                colorFilter:
-                    const ColorFilter.mode(Color(0xffF26F3F), BlendMode.srcIn),
-                // color: Color(0xffF26F3F),
-              ),
-            )
+              trailing: isLoved
+                  ? GestureDetector(
+                      onTap: () {
+                        isLoved = false;
+
+                        setState(() {});
+                      },
+                      child: const LovedIcon())
+                  : GestureDetector(
+                      onTap: () {
+                        isLoved = true;
+
+                        setState(() {});
+                      },
+                      child: const NotLovedIcon()),
+            ),
           ],
         ),
       ),
