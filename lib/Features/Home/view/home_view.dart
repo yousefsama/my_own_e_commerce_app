@@ -17,12 +17,12 @@ class HomeView extends StatelessWidget {
         () => NavigationBar(
             labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             elevation: 0,
-            height: 65,
+            height: 75,
             indicatorColor: Colors.transparent,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
-            backgroundColor: const Color(0xff4C4C4C).withOpacity(0.6),
+            backgroundColor: Constance.navigationBarColor,
             destinations: [
               NavigationDestination(
                   icon: SvgPicture.asset(

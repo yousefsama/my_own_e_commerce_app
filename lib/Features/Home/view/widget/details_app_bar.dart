@@ -12,9 +12,14 @@ class DeatailsAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SvgPicture.asset(
-          Assets.imagesArrowleft,
-          height: 35,
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: SvgPicture.asset(
+            Assets.imagesArrowleft,
+            height: 35,
+          ),
         ),
         SvgPicture.asset(
           Assets.imagesLogo,
