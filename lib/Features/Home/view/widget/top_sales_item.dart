@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/Love_and_notLoveIcon.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/custom_snack_bar.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
@@ -53,7 +56,17 @@ class _TopSalesItemState extends State<TopSalesItem> {
                   : GestureDetector(
                       onTap: () {
                         isLoved = true;
-
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Padding(
+                              padding: EdgeInsets.only(
+                                left: 25,
+                                right: 25,
+                              ),
+                              child: AddToBagRow(),
+                            ),
+                          ),
+                        );
                         setState(() {});
                       },
                       child: const NotLovedIcon()),

@@ -13,59 +13,62 @@ class HomeView extends StatelessWidget {
     final controller = Get.put(NavigationController());
     return Scaffold(
       backgroundColor: Constance.primaryBackGroundColor,
-      bottomNavigationBar: Obx(
-        () => NavigationBar(
-            labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-            elevation: 0,
-            height: 75,
-            indicatorColor: Colors.transparent,
-            selectedIndex: controller.selectedIndex.value,
-            onDestinationSelected: (index) =>
-                controller.selectedIndex.value = index,
-            backgroundColor: Constance.navigationBarColor,
-            destinations: [
-              NavigationDestination(
-                  icon: SvgPicture.asset(
-                    Assets.imagesHomeIcon,
-                    color: Colors.black,
-                  ),
-                  selectedIcon: SvgPicture.asset(
-                    Assets.imagesHomeIcon,
-                    color: Colors.white,
-                  ),
-                  label: 'Home'),
-              NavigationDestination(
-                  icon: SvgPicture.asset(
-                    Assets.imagesCollection,
-                    color: Colors.black,
-                  ),
-                  selectedIcon: SvgPicture.asset(
-                    Assets.imagesCollection,
-                    color: Colors.white,
-                  ),
-                  label: 'Collection'),
-              NavigationDestination(
-                  icon: SvgPicture.asset(
-                    Assets.imagesShoppingBag,
-                    color: Colors.black,
-                  ),
-                  selectedIcon: SvgPicture.asset(
-                    Assets.imagesShoppingBag,
-                    color: Colors.white,
-                  ),
-                  label: 'My Cart'),
-              NavigationDestination(
-                  icon: SvgPicture.asset(
-                    Assets.imagesUserIcon,
-                    color: Colors.black,
-                  ),
-                  selectedIcon: SvgPicture.asset(
-                    Assets.imagesUserIcon,
-                    color: Colors.white,
-                  ),
-                  label: 'Profile'),
-            ]),
-      ),
+      bottomNavigationBar:
+          // Obx(
+          //   () =>
+
+          NavigationBar(
+              labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+              elevation: 0,
+              height: 75,
+              indicatorColor: Colors.transparent,
+              selectedIndex: controller.selectedIndex.value,
+              onDestinationSelected: (index) =>
+                  controller.selectedIndex.value = index,
+              backgroundColor: Constance.navigationBarColor,
+              destinations: [
+            NavigationDestination(
+                icon: SvgPicture.asset(
+                  Assets.imagesHomeIcon,
+                  color: Colors.black,
+                ),
+                selectedIcon: SvgPicture.asset(
+                  Assets.imagesHomeIcon,
+                  color: Colors.white,
+                ),
+                label: 'Home'),
+            NavigationDestination(
+                icon: SvgPicture.asset(
+                  Assets.imagesCollection,
+                  color: Colors.black,
+                ),
+                selectedIcon: SvgPicture.asset(
+                  Assets.imagesCollection,
+                  color: Colors.white,
+                ),
+                label: 'Collection'),
+            NavigationDestination(
+                icon: SvgPicture.asset(
+                  Assets.imagesShoppingBag,
+                  color: Colors.black,
+                ),
+                selectedIcon: SvgPicture.asset(
+                  Assets.imagesShoppingBag,
+                  color: Colors.white,
+                ),
+                label: 'My Cart'),
+            NavigationDestination(
+                icon: SvgPicture.asset(
+                  Assets.imagesUserIcon,
+                  color: Colors.black,
+                ),
+                selectedIcon: SvgPicture.asset(
+                  Assets.imagesUserIcon,
+                  color: Colors.white,
+                ),
+                label: 'Profile'),
+          ]),
+      // ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }

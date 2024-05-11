@@ -9,7 +9,11 @@ class ItemDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(25.0),
+      padding: EdgeInsets.only(
+        left: 25,
+        right: 25,
+        top: 25,
+      ),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

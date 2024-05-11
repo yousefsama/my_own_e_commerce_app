@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Padding(
-      padding: const EdgeInsets.all(25),
+      padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(child: SvgPicture.asset(Assets.imagesLogo)),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
 class MoreImagesListView extends StatelessWidget {

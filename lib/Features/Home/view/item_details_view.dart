@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/ItemDetailsViewBody.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/custom_floating_button.dart';
 import 'package:my_own_e_commerce_app/constance.dart';
 
@@ -9,9 +10,24 @@ class ItemDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const CustomFloatingButton(),
       backgroundColor: Constance.primaryBackGroundColor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Padding(
+                padding: EdgeInsets.only(
+                  left: 25,
+                  right: 25,
+                ),
+                child: AddToBagRow(),
+              ),
+            ),
+          );
+        },
+        child: const CustomFloatingButton(),
+      ),
       body: const ItemDetailsViewBody(),
     );
   }
