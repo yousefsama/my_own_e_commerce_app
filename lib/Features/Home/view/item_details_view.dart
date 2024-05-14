@@ -21,7 +21,7 @@ class ItemDetailsView extends StatelessWidget {
                   left: 25,
                   right: 25,
                 ),
-                child: AddToBagRow(),
+                child: CustomSnackBar(text: 'Added to Cart'),
               ),
             ),
           );

@@ -24,7 +24,7 @@ class CustomFloatingButton extends StatelessWidget {
           SvgPicture.asset(Assets.imagesShoppingBag),
           const SizedBox(width: 20),
           Text(
-            'Add to bag',
+            'Add to Cart',
             style: AppStyle.bold24.copyWith(color: Colors.white),
           )
         ],

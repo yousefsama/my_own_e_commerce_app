@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/forget_password_view.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/signup_view.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/signin_view.dart';
+import 'package:my_own_e_commerce_app/Features/Authentication/view/splash_view.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/home_view.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/item_details_view.dart';
 

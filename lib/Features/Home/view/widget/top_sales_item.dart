@@ -34,7 +34,7 @@ class _TopSalesItemState extends State<TopSalesItem> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Clothes asd asd asd asd asd asd sad a asdas d asd asdasd asd asd asdsd',
+                'Clothes ad sda asd d',
                 style: AppStyle.medium18Black
                     .copyWith(fontWeight: FontWeight.w600),
                 maxLines: 2,
@@ -63,7 +63,7 @@ class _TopSalesItemState extends State<TopSalesItem> {
                                 left: 25,
                                 right: 25,
                               ),
-                              child: AddToBagRow(),
+                              child: CustomSnackBar(text: 'Added to favorites'),
                             ),
                           ),
                         );

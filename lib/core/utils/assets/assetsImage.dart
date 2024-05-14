@@ -33,6 +33,10 @@ class Assets {
   /// assets/images/book-open_icon.svg
   static const String imagesBookOpenIcon = "assets/images/book-open_icon.svg";
 
+  /// Assets for imagesCart
+  /// assets/images/Cart.svg
+  static const String imagesCart = "assets/images/Cart.svg";
+
   /// Assets for imagesCategorytest
   /// assets/images/categorytest.png
   static const String imagesCategorytest = "assets/images/categorytest.png";
@@ -81,6 +85,10 @@ class Assets {
   /// assets/images/LovedIcon.svg
   static const String imagesLovedIcon = "assets/images/LovedIcon.svg";
 
+  /// Assets for imagesMinus
+  /// assets/images/minus.svg
+  static const String imagesMinus = "assets/images/minus.svg";
+
   /// Assets for imagesMinusIcon
   /// assets/images/minusIcon.svg
   static const String imagesMinusIcon = "assets/images/minusIcon.svg";
@@ -92,6 +100,10 @@ class Assets {
   /// Assets for imagesMoreImageTest
   /// assets/images/moreImageTest.svg
   static const String imagesMoreImageTest = "assets/images/moreImageTest.svg";
+
+  /// Assets for imagesPlus
+  /// assets/images/plus.svg
+  static const String imagesPlus = "assets/images/plus.svg";
 
   /// Assets for imagesPlusIcon
   /// assets/images/plus_Icon.svg
@@ -125,9 +137,17 @@ class Assets {
   /// assets/images/twitterLogo.svg
   static const String imagesTwitterLogo = "assets/images/twitterLogo.svg";
 
+  /// Assets for imagesUser
+  /// assets/images/User.svg
+  static const String imagesUser = "assets/images/User.svg";
+
   /// Assets for imagesUserIcon
   /// assets/images/UserIcon.svg
   static const String imagesUserIcon = "assets/images/UserIcon.svg";
+
+  /// Assets for imagesUserImage
+  /// assets/images/UserImage.png
+  static const String imagesUserImage = "assets/images/UserImage.png";
 
   /// Assets for imagesVariant3Icon
   /// assets/images/Variant3Icon.svg

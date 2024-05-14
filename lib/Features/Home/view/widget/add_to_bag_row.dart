@@ -3,11 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
-class AddToBagRow extends StatelessWidget {
-  const AddToBagRow({
+class CustomSnackBar extends StatelessWidget {
+  const CustomSnackBar({
     super.key,
+    required this.text,
   });
-
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,7 +20,7 @@ class AddToBagRow extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         Text(
-          'Added to bag',
+          text,
           style: AppStyle.bold24.copyWith(color: Colors.white),
         ),
         GestureDetector(
