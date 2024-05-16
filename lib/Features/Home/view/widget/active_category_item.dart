@@ -35,8 +35,8 @@ class ActiveCategoryItem extends StatelessWidget {
             ),
             Text(
               'Clothes ',
-              style:
-                  AppStyle.medium18Black.copyWith(fontWeight: FontWeight.w600),
+              style: AppStyle.medium18Black(context)
+                  .copyWith(fontWeight: FontWeight.w600),
             )
           ],
         ),

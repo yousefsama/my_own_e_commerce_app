@@ -30,7 +30,7 @@ class MyProfileItem extends StatelessWidget {
             Expanded(
               child: Text(
                 myProfileModel.text,
-                style: AppStyle.bold24,
+                style: AppStyle.bold24(context),
                 textAlign: TextAlign.center,
               ),
             )

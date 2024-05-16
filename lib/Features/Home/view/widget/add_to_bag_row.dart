@@ -21,7 +21,7 @@ class CustomSnackBar extends StatelessWidget {
         ),
         Text(
           text,
-          style: AppStyle.bold24.copyWith(color: Colors.white),
+          style: AppStyle.bold24(context).copyWith(color: Colors.white),
         ),
         GestureDetector(
             onTap: () {

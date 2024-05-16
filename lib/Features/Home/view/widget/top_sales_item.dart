@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/Love_and_notLoveIcon.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
-import 'package:my_own_e_commerce_app/Features/Home/view/widget/custom_snack_bar.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
@@ -35,14 +33,14 @@ class _TopSalesItemState extends State<TopSalesItem> {
               contentPadding: EdgeInsets.zero,
               title: Text(
                 'Clothes ad sda asd d',
-                style: AppStyle.medium18Black
+                style: AppStyle.medium18Black(context)
                     .copyWith(fontWeight: FontWeight.w600),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               subtitle: Text(
                 '40\$',
-                style: AppStyle.medium18Black
+                style: AppStyle.medium18Black(context)
                     .copyWith(fontWeight: FontWeight.w600, color: Colors.grey),
               ),
               trailing: isLoved

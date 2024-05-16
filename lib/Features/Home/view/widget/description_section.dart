@@ -9,16 +9,16 @@ class DescriptionSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Description',
-          style: AppStyle.bold24,
+          style: AppStyle.bold24(context),
         ),
         const SizedBox(
           height: 15,
         ),
         Text(
           'Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.',
-          style: AppStyle.medium16grey.copyWith(color: Colors.grey),
+          style: AppStyle.medium16grey(context).copyWith(color: Colors.grey),
         ),
       ],
     );

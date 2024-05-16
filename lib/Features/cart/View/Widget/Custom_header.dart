@@ -23,7 +23,7 @@ class LogoAndText extends StatelessWidget {
             ),
             Text(
               text,
-              style: AppStyle.bold34,
+              style: AppStyle.bold34(context),
             ),
           ],
         )

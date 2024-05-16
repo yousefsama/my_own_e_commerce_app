@@ -20,8 +20,8 @@ class CollectionBody extends StatelessWidget {
             Assets.imagesLogo,
           )),
           const SliverToBoxAdapter(child: SizedBox(height: 40)),
-          const SliverToBoxAdapter(
-            child: Text('discover new things', style: AppStyle.bold34),
+          SliverToBoxAdapter(
+            child: Text('discover new things', style: AppStyle.bold34(context)),
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 40)),
           const SliverToBoxAdapter(child: SizedBox(height: 15)),

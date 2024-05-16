@@ -13,7 +13,8 @@ class ProductInfoSection extends StatelessWidget {
       children: [
         Text(
           "Product info",
-          style: AppStyle.bold24.copyWith(color: Constance.orangeColor),
+          style:
+              AppStyle.bold24(context).copyWith(color: Constance.orangeColor),
         ),
         const SizedBox(
           height: 8,

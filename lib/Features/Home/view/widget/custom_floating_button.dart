@@ -25,7 +25,7 @@ class CustomFloatingButton extends StatelessWidget {
           const SizedBox(width: 20),
           Text(
             'Add to Cart',
-            style: AppStyle.bold24.copyWith(color: Colors.white),
+            style: AppStyle.bold24(context).copyWith(color: Colors.white),
           )
         ],
       ),

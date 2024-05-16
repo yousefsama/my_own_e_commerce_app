@@ -18,7 +18,6 @@ class CustomAppBar extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_back,
-              color: Colors.white,
             )),
       ],
     );

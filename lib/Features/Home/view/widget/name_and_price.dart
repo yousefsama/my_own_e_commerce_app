@@ -13,7 +13,7 @@ class NameAndPrice extends StatelessWidget {
       children: [
         Text(
           'Camisas',
-          style: AppStyle.bold40.copyWith(
+          style: AppStyle.bold40(context).copyWith(
             color: Colors.white,
           ),
         ),
@@ -21,7 +21,7 @@ class NameAndPrice extends StatelessWidget {
           children: [
             Text(
               '40\$',
-              style: AppStyle.bold40.copyWith(
+              style: AppStyle.bold40(context).copyWith(
                 color: Colors.white,
               ),
             ),
@@ -30,10 +30,12 @@ class NameAndPrice extends StatelessWidget {
             ),
             Text(
               '/',
-              style: AppStyle.medium16grey.copyWith(color: Colors.grey),
+              style:
+                  AppStyle.medium16grey(context).copyWith(color: Colors.grey),
             ),
             Text('Talla',
-                style: AppStyle.medium16grey.copyWith(color: Colors.grey)),
+                style: AppStyle.medium16grey(context)
+                    .copyWith(color: Colors.grey)),
           ],
         )
       ],

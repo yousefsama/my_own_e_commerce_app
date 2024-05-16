@@ -16,7 +16,7 @@ class TopSaledAndExplorerBar extends StatelessWidget {
       children: [
         CustomTextAndArrow(
           text: 'Top Sales',
-          textStyle: AppStyle.bold24,
+          textStyle: AppStyle.bold24(context),
           icon: RotatedBox(
             quarterTurns: 1,
             child: SvgPicture.asset(
@@ -27,7 +27,8 @@ class TopSaledAndExplorerBar extends StatelessWidget {
         ),
         CustomTextAndArrow(
           text: 'Explore',
-          textStyle: AppStyle.bold24.copyWith(color: const Color(0xffA9A9A9)),
+          textStyle:
+              AppStyle.bold24(context).copyWith(color: const Color(0xffA9A9A9)),
           icon: SvgPicture.asset(
             Assets.imagesArrowRightIcon,
             color: const Color(0xffF26F3F),

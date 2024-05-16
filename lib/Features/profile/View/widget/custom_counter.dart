@@ -32,7 +32,7 @@ class _CustomCounterState extends State<CustomCounter> {
         ),
         Text(
           counter.toString(),
-          style: AppStyle.bold24,
+          style: AppStyle.bold24(context),
         ),
         const SizedBox(
           width: 5,

@@ -9,15 +9,15 @@ class CategorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Categories',
-          style: AppStyle.bold24,
+          style: AppStyle.bold24(context),
         ),
-        SizedBox(height: 20),
-        CategoryListView(),
+        const SizedBox(height: 20),
+        const CategoryListView(),
       ],
     );
   }

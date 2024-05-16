@@ -25,7 +25,8 @@ class ProductInfoItem extends StatelessWidget {
           const SizedBox(width: 10),
           Text(
             'Size sd sdad s',
-            style: AppStyle.medium18Black.copyWith(fontWeight: FontWeight.bold),
+            style: AppStyle.medium18Black(context)
+                .copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

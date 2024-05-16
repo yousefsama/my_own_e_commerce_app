@@ -13,9 +13,9 @@ class MyCartItemDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Camisa',
-          style: AppStyle.bold24,
+          style: AppStyle.bold24(context),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -23,27 +23,29 @@ class MyCartItemDetails extends StatelessWidget {
             Image.asset(Assets.imagesProductInfoTest),
             Text(
               'Negro',
-              style:
-                  AppStyle.medium16Black.copyWith(fontWeight: FontWeight.bold),
+              style: AppStyle.medium16Black(context)
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
           ],
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            const Text(
+            Text(
               '40\$',
-              style: AppStyle.bold24,
+              style: AppStyle.bold24(context),
             ),
             const SizedBox(
               width: 5,
             ),
             Text(
               '/',
-              style: AppStyle.medium16grey.copyWith(color: Colors.grey),
+              style:
+                  AppStyle.medium16grey(context).copyWith(color: Colors.grey),
             ),
             Text('Talla',
-                style: AppStyle.medium16grey.copyWith(color: Colors.grey)),
+                style: AppStyle.medium16grey(context)
+                    .copyWith(color: Colors.grey)),
           ],
         ),
       ],

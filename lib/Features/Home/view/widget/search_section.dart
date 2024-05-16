@@ -12,9 +12,9 @@ class SearchSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           'What are you looking for?',
-          style: AppStyle.bold34,
+          style: AppStyle.bold34(context),
         ),
         const SizedBox(
           height: 20,

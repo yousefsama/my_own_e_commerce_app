@@ -1,7 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -40,7 +38,7 @@ class _SignInFormState extends State<SignInForm> {
             isPassWord: false,
           ),
           const SizedBox(
-            height: 16,
+            height: 20,
           ),
           CustomFormTextField(
             onChange: (value) {
@@ -51,7 +49,7 @@ class _SignInFormState extends State<SignInForm> {
             isPassWord: isHidePassword,
           ),
           const SizedBox(
-            height: 8,
+            height: 20,
           ),
           Row(
             children: [
@@ -92,7 +90,7 @@ class _SignInFormState extends State<SignInForm> {
             ],
           ),
           const SizedBox(
-            height: 16,
+            height: 25,
           ),
           CustomButtom(
               title: 'Sign in',
