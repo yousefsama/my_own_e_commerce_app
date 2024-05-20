@@ -13,30 +13,33 @@ class CartItem extends StatelessWidget {
       height: 120,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Colors.white),
-      child: Row(
-        children: [
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-                decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                  Assets.imagesProductTestImage,
-                ),
+      child: Expanded(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                    decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: const DecorationImage(
+                    image: AssetImage(
+                      Assets.imagesProductTestImage,
+                    ),
+                  ),
+                )),
               ),
-            )),
-          )),
-          const SizedBox(
-            width: 10,
-          ),
-          const Expanded(
-            child: MyCartItemDetails(),
-          ),
-          const CustomCounter()
-        ],
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            const MyCartItemDetails(),
+            Expanded(child: SizedBox()),
+            const CustomCounter()
+          ],
+        ),
       ),
     );
   }

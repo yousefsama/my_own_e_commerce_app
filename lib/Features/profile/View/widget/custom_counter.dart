@@ -28,14 +28,14 @@ class _CustomCounterState extends State<CustomCounter> {
           icon: SvgPicture.asset(Assets.imagesMinus),
         ),
         const SizedBox(
-          width: 5,
+          width: 2,
         ),
         Text(
           counter.toString(),
           style: AppStyle.bold24(context),
         ),
         const SizedBox(
-          width: 5,
+          width: 2,
         ),
         IconButton(
           onPressed: () {

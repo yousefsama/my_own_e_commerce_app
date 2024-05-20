@@ -18,8 +18,14 @@ class _TopSalesSliverGridViewState extends State<TopSalesSliverGridView> {
   Widget build(BuildContext context) {
     return SliverGrid.builder(
         itemCount: 20,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: MediaQuery.sizeOf(context).width < 800
+                ? 2
+                : MediaQuery.sizeOf(context).width < 1200
+                    ? 4
+                    : MediaQuery.sizeOf(context).width < 1400
+                        ? 6
+                        : 8,
             crossAxisSpacing: 5,
             mainAxisSpacing: 10,
             childAspectRatio: 0.63),

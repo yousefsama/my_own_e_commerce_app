@@ -108,10 +108,10 @@ double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
   if (width < 800) {
     //ألنقط دى اللى هيتغير عندها حجم الخط
-    return width / 200;
+    return width / 600;
   } else if (width < 1400) {
-    return width / 500;
+    return width / 1200;
   } else {
-    return width / 1500;
+    return width / 1920;
   }
 }

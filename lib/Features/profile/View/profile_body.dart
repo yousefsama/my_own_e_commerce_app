@@ -25,7 +25,7 @@ class ProfileBody extends StatelessWidget {
                 height: 20,
               ),
             ),
-            SliverToBoxAdapter(child: ProfileImage()),
+            SliverToBoxAdapter(child: Flexible(child: ProfileImage())),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 40,

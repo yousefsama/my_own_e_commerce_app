@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, unused_import
 
 import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/forget_password_view.dart';
@@ -21,7 +21,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) =>
-            const SplashView(), // convert it to splashView
+            const HomeView(), // convert it to splashView
       ),
       GoRoute(
         path: signInView,

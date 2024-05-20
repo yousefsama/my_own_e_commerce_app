@@ -20,55 +20,106 @@ class _TopSalesItemState extends State<TopSalesItem> {
     return Card(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AspectRatio(
                 aspectRatio: 1,
                 child: Image.asset(Assets.imagesProductTestImage)),
-            const SizedBox(
-              height: 15,
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(
-                'Clothes ad sda asd d',
-                style: AppStyle.medium18Black(context)
-                    .copyWith(fontWeight: FontWeight.w600),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Text(
-                '40\$',
-                style: AppStyle.medium18Black(context)
-                    .copyWith(fontWeight: FontWeight.w600, color: Colors.grey),
-              ),
-              trailing: isLoved
-                  ? GestureDetector(
-                      onTap: () {
-                        isLoved = false;
 
-                        setState(() {});
-                      },
-                      child: const LovedIcon())
-                  : GestureDetector(
-                      onTap: () {
-                        isLoved = true;
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Padding(
-                              padding: EdgeInsets.only(
-                                left: 25,
-                                right: 25,
-                              ),
-                              child: CustomSnackBar(text: 'Added to favorites'),
-                            ),
-                          ),
-                        );
-                        setState(() {});
-                      },
-                      child: const NotLovedIcon()),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Clothes yousef sama shams el din hassanin',
+                  style: AppStyle.medium18Black(context)
+                      .copyWith(fontWeight: FontWeight.w600),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '40\$',
+                      style: AppStyle.medium18Black(context).copyWith(
+                          fontWeight: FontWeight.w600, color: Colors.grey),
+                    ),
+                    isLoved
+                        ? GestureDetector(
+                            onTap: () {
+                              isLoved = false;
+
+                              setState(() {});
+                            },
+                            child: const LovedIcon())
+                        : GestureDetector(
+                            onTap: () {
+                              isLoved = true;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 25,
+                                      right: 25,
+                                    ),
+                                    child: CustomSnackBar(
+                                        text: 'Added to favorites'),
+                                  ),
+                                ),
+                              );
+                              setState(() {});
+                            },
+                            child: const NotLovedIcon()),
+                  ],
+                )
+              ],
             ),
+            // ListTile(
+
+            //   contentPadding: EdgeInsets.zero,
+            //   title: Text(
+            //     'Clothes ad sda asd  sad asd',
+            //     style: AppStyle.medium18Black(context)
+            //         .copyWith(fontWeight: FontWeight.w600),
+            //     maxLines: 2,
+            //     overflow: TextOverflow.ellipsis,
+            //   ),
+            //   subtitle: Text(
+            //     '40\$',
+            //     style: AppStyle.medium18Black(context)
+            //         .copyWith(fontWeight: FontWeight.w600, color: Colors.grey),
+            //   ),
+            //   trailing: isLoved
+            //       ? GestureDetector(
+            //           onTap: () {
+            //             isLoved = false;
+
+            //             setState(() {});
+            //           },
+            //           child: const LovedIcon())
+            //       : GestureDetector(
+            //           onTap: () {
+            //             isLoved = true;
+            //             ScaffoldMessenger.of(context).showSnackBar(
+            //               const SnackBar(
+            //                 content: Padding(
+            //                   padding: EdgeInsets.only(
+            //                     left: 25,
+            //                     right: 25,
+            //                   ),
+            //                   child: CustomSnackBar(text: 'Added to favorites'),
+            //                 ),
+            //               ),
+            //             );
+            //             setState(() {});
+            //           },
+            //           child: const NotLovedIcon()),
+            // ),
           ],
         ),
       ),
