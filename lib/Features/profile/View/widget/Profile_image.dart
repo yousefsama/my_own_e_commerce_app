@@ -6,16 +6,15 @@ class ProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          image: const DecorationImage(
-              image: AssetImage(
-                Assets.imagesUserImage,
-              ),
-              fit: BoxFit.fill),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.sizeOf(context).width < 800
+              ? MediaQuery.sizeOf(context).width * 0.25
+              : MediaQuery.sizeOf(context).width * 0.22),
+      child: const FittedBox(
+        fit: BoxFit.fill,
+        child: CircleAvatar(
+          backgroundImage: AssetImage(Assets.imagesUserImage),
         ),
       ),
     );

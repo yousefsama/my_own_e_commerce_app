@@ -9,10 +9,13 @@ class ProfileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.0),
-        child: CustomScrollView(
+        padding: MediaQuery.sizeOf(context).width < 800
+            ? const EdgeInsets.symmetric(horizontal: 25.0)
+            : EdgeInsets.symmetric(
+                horizontal: MediaQuery.sizeOf(context).width * 0.2),
+        child: const CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: SizedBox(height: 20),

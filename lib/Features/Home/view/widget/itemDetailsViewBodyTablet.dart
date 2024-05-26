@@ -3,25 +3,23 @@ import 'package:my_own_e_commerce_app/Features/Home/view/widget/description_sect
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/product_Info_section.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/product_details_card.dart';
 
-class ItemDetailsViewBodyMobile extends StatelessWidget {
-  const ItemDetailsViewBodyMobile({super.key});
+class ItemDetailsViewBodyTablet extends StatelessWidget {
+  const ItemDetailsViewBodyTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(
-        left: 25,
-        right: 25,
-        top: 25,
-      ),
-      child: SingleChildScrollView(
+    return const Center(
+      child: SizedBox(
+        width: 800,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 25,
+            ),
             ProductDetailsCard(),
             SizedBox(height: 35),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 50),
               child: ProductInfoSection(),
             ),
             SizedBox(

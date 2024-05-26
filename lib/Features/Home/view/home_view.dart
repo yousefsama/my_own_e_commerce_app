@@ -3,9 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/collection_body.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/ItemDetailsViewBody.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/cart_body_tablet_layout.dart';
 // import 'package:my_own_e_commerce_app/Features/Home/view/widget/cart_body_tablet_layout.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/home_view_body.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/itemDetailsViewBodyTablet.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/item_details_body_desktop.dart';
 import 'package:my_own_e_commerce_app/Features/cart/View/Cart_body.dart';
 import 'package:my_own_e_commerce_app/Features/profile/View/profile_body.dart';
 import 'package:my_own_e_commerce_app/constance.dart';
@@ -89,6 +92,6 @@ class NavigationController extends GetxController {
       tabletLayout: (context) => const CartBodyTabletLayout(),
       desktopLayout: (context) => const CartBodyTabletLayout(),
     ),
-    const ProfileBody(),
+    const ProfileBody()
   ];
 }
