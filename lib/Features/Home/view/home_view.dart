@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/collection_body.dart';
@@ -21,6 +22,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
     final controller = Get.put(NavigationController());
     return Scaffold(
       backgroundColor: Constance.primaryBackGroundColor,

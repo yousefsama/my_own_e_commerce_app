@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,11 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const ECommerceApp(), // Wrap your app
-    ),
+    // DevicePreview(
+    //   enabled: true,
+    //   builder: (context) =>
+    const ECommerceApp(), // Wrap your app
+    // ),
   );
 }
 
@@ -22,6 +24,7 @@ class ECommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,

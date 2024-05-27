@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/Features/Home/data/models/category_model.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
 class InActiveCategoryItem extends StatelessWidget {
-  const InActiveCategoryItem({super.key});
-
+  const InActiveCategoryItem({super.key, required this.categorymodel});
+  final Categorymodel categorymodel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,16 +25,16 @@ class InActiveCategoryItem extends StatelessWidget {
                   elevation: 0,
                   color: const Color(0xffF2F2F2),
                   child: Padding(
-                      padding: const EdgeInsets.all(13),
+                      padding: const EdgeInsets.all(3),
                       child: AspectRatio(
                           aspectRatio: 1,
-                          child: Image.asset(Assets.imagesCategorytest)))),
+                          child: Image.network(categorymodel.image)))),
             ),
             const SizedBox(
               width: 8,
             ),
             Text(
-              'Clothes ',
+              categorymodel.name,
               style: AppStyle.medium18Black(context)
                   .copyWith(fontWeight: FontWeight.w600),
             )
