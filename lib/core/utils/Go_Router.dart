@@ -21,7 +21,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) =>
-            const HomeView(), // convert it to splashView
+            const SplashView(), // convert it to splashView
       ),
       GoRoute(
         path: signInView,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_own_e_commerce_app/Features/Authentication/view/manager/signup_cubit/signup_cubit.dart';
 import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 import 'package:my_own_e_commerce_app/core/widgets/custom_buttom.dart';
 
