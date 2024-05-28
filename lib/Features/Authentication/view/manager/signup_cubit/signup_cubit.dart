@@ -23,7 +23,8 @@ class SignupCubit extends Cubit<SignupState> {
         emit(SignupFailure(
             errorMessage: 'The account already exists for that email.'));
       } else {
-        emit(SignupFailure(errorMessage: e.toString()));
+        emit(SignupFailure(
+            errorMessage: 'the email address is badly formatted'));
       }
     }
   }

@@ -114,7 +114,13 @@ class _SignUpFormState extends State<SignUpForm> {
                     try {
                       BlocProvider.of<SignupCubit>(context)
                           .signup(email: email, password: password);
-                    } catch (e) {}
+                    } catch (e) {
+                      QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.error,
+                          title: 'Wrong',
+                          text: e.toString());
+                    }
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
