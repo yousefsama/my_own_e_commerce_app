@@ -1,8 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:developer';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/manager/reset_cubit/reset_cubit.dart';
@@ -22,9 +19,9 @@ class ForgetPasswordViewBody extends StatefulWidget {
 }
 
 class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
-  late String email;
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   GlobalKey<FormState> formKey = GlobalKey();
+  TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BlocListener<ResetCubit, ResetState>(
@@ -99,12 +96,11 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                           height: 40,
                         ),
                         CustomFormTextField(
-                            hintText: 'Enter your email',
-                            label: 'Email',
-                            isPassWord: false,
-                            onChange: (value) {
-                              email = value;
-                            }),
+                          controller: emailController,
+                          hintText: 'Enter your email',
+                          label: 'Email',
+                          isPassWord: false,
+                        ),
                         const SizedBox(
                           height: 16,
                         ),
@@ -118,7 +114,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                                 try {
                                   // ignore: unused_local_variable
                                   BlocProvider.of<ResetCubit>(context)
-                                      .reset(email: email);
+                                      .reset(email: emailController.text);
                                 } catch (e) {
                                   QuickAlert.show(
                                     context: context,

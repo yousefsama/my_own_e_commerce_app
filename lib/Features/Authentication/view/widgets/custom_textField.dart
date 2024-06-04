@@ -3,15 +3,19 @@
 import 'package:flutter/material.dart';
 
 class CustomFormTextField extends StatefulWidget {
-  const CustomFormTextField(
-      {super.key,
-      this.hintText,
-      this.label,
-      required this.isPassWord,
-      this.onChange,
-      this.keyboardType});
+  const CustomFormTextField({
+    super.key,
+    this.hintText,
+    this.label,
+    required this.isPassWord,
+    this.onChange,
+    this.keyboardType,
+    this.controller,
+  });
   final String? hintText, label;
   final bool isPassWord;
+  final TextEditingController? controller;
+
   final void Function(String)? onChange;
   final TextInputType? keyboardType;
 
@@ -23,6 +27,7 @@ class _CustomFormTextFieldState extends State<CustomFormTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       keyboardType: widget.keyboardType,
       validator: (value) {
         if (value == null || value.isEmpty) {

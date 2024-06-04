@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, unused_import
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/forget_password_view.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/signup_view.dart';
@@ -20,8 +21,11 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) =>
-            const SplashView(), // convert it to splashView
+        builder: (context, state) {
+          return FirebaseAuth.instance.currentUser == null
+              ? const SplashView()
+              : const HomeView();
+        }, // convert it to splashView
       ),
       GoRoute(
         path: signInView,

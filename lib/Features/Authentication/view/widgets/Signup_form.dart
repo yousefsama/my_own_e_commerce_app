@@ -1,5 +1,8 @@
 // ignore_for_file: use_build_context_synchronously, file_names
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -18,10 +21,13 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   bool isChecked = false;
-  late String email, password;
+
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   bool isLoading = false;
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupState>(
@@ -29,6 +35,17 @@ class _SignUpFormState extends State<SignUpForm> {
         if (state is SignupLoading) {
           isLoading = true;
         } else if (state is SignupSuccess) {
+          FirebaseFirestore db = FirebaseFirestore.instance;
+          db
+              .collection("users")
+              .doc(FirebaseAuth.instance.currentUser!.uid)
+              .set({
+            'id': FirebaseAuth.instance.currentUser!.uid,
+            'user name': userNameController.text,
+            'email': emailController.text,
+            'image': null
+          }, SetOptions(merge: true));
+
           QuickAlert.show(
               context: context,
               type: QuickAlertType.success,
@@ -51,28 +68,24 @@ class _SignUpFormState extends State<SignUpForm> {
         child: Column(
           children: [
             CustomFormTextField(
+              controller: userNameController,
               keyboardType: TextInputType.name,
-              onChange: (value) {},
               label: 'Full Name',
               hintText: 'Enter Your Full Name',
               isPassWord: false,
             ),
             const SizedBox(height: 16),
             CustomFormTextField(
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
-              onChange: (value) {
-                email = value;
-              },
               label: 'Email',
               hintText: 'Enter Your Email',
               isPassWord: false,
             ),
             const SizedBox(height: 16),
             CustomFormTextField(
+              controller: passwordController,
               keyboardType: TextInputType.visiblePassword,
-              onChange: (value) {
-                password = value;
-              },
               label: 'Password',
               hintText: 'Enter Your Password',
               isPassWord: true,
@@ -112,8 +125,9 @@ class _SignUpFormState extends State<SignUpForm> {
                 onTap: () async {
                   if (formKey.currentState!.validate()) {
                     try {
-                      BlocProvider.of<SignupCubit>(context)
-                          .signup(email: email, password: password);
+                      BlocProvider.of<SignupCubit>(context).signup(
+                          email: emailController.text,
+                          password: passwordController.text);
                     } catch (e) {
                       QuickAlert.show(
                           context: context,

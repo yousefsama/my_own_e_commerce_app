@@ -50,7 +50,7 @@ class _CategoryListViewState extends State<CategoryListView> {
                   }),
             );
           } else {
-            return const Text('error');
+            return const Center(child: CircularProgressIndicator());
           }
         });
   }

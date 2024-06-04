@@ -19,7 +19,9 @@ class SignInForm extends StatefulWidget {
 
 class _SignInFormState extends State<SignInForm> {
   bool isHidePassword = true;
-  late String email, password;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   bool isChecked = false;
   GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
@@ -46,9 +48,7 @@ class _SignInFormState extends State<SignInForm> {
         child: Column(
           children: [
             CustomFormTextField(
-              onChange: (value) {
-                email = value;
-              },
+              controller: emailController,
               label: 'Email',
               hintText: 'Enter Your Email',
               isPassWord: false,
@@ -57,9 +57,7 @@ class _SignInFormState extends State<SignInForm> {
               height: 20,
             ),
             CustomFormTextField(
-              onChange: (value) {
-                password = value;
-              },
+              controller: passwordController,
               label: 'Password',
               hintText: 'Enter Your Password',
               isPassWord: isHidePassword,
@@ -116,8 +114,9 @@ class _SignInFormState extends State<SignInForm> {
                 onTap: () async {
                   if (formKey.currentState!.validate()) {
                     try {
-                      BlocProvider.of<SigninCubit>(context)
-                          .signin(email: email, password: password);
+                      BlocProvider.of<SigninCubit>(context).signin(
+                          email: emailController.text,
+                          password: passwordController.text);
                     } catch (e) {}
                   } else {
                     autovalidateMode = AutovalidateMode.always;
