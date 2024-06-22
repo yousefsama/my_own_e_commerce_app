@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/category_section.dart';
-import 'package:my_own_e_commerce_app/Features/Home/view/widget/top_saled_grid_view.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/widget/product_grid_view.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 import 'package:svg_flutter/svg.dart';
@@ -24,10 +24,10 @@ class CollectionBody extends StatelessWidget {
             child: Text('discover new things', style: AppStyle.bold34(context)),
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 40)),
-          const SliverToBoxAdapter(child: SizedBox(height: 15)),
+          // const SliverToBoxAdapter(child: SizedBox(height: 15)),
           const SliverToBoxAdapter(child: CategorySection()),
           const SliverToBoxAdapter(child: SizedBox(height: 15)),
-          const TopSalesSliverGridView(),
+          const SliverFillRemaining(child: ProductSliverGridView()),
         ],
       ),
     ));

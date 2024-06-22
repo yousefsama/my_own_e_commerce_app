@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 
 class DescriptionSection extends StatelessWidget {
-  const DescriptionSection({super.key});
-
+  const DescriptionSection({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,7 +18,7 @@ class DescriptionSection extends StatelessWidget {
           height: 15,
         ),
         Text(
-          'Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.',
+          productModel.description ?? 'there is no Description',
           style: AppStyle.medium16grey(context).copyWith(color: Colors.grey),
         ),
       ],

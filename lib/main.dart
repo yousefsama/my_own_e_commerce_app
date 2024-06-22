@@ -38,7 +38,7 @@ class ECommerceApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => SigninCubit()),
         BlocProvider(create: (context) => SignupCubit()),
-        BlocProvider(create: (context) => ResetCubit())
+        BlocProvider(create: (context) => ResetCubit()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

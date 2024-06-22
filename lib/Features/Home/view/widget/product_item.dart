@@ -1,38 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/Love_and_notLoveIcon.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 
-class TopSalesItem extends StatefulWidget {
-  const TopSalesItem({
+class ProductItem extends StatefulWidget {
+  const ProductItem({
     super.key,
+    required this.productModel,
   });
-
+  final ProductModel productModel;
   @override
-  State<TopSalesItem> createState() => _TopSalesItemState();
+  State<ProductItem> createState() => _ProductItemState();
 }
 
-class _TopSalesItemState extends State<TopSalesItem> {
+class _ProductItemState extends State<ProductItem> {
   bool isLoved = false;
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+        padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            AspectRatio(
-                aspectRatio: 1,
-                child: Image.asset(Assets.imagesProductTestImage)),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: AspectRatio(
+                  aspectRatio: 1,
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Image.network(
+                      widget.productModel.image,
+                    ),
+                  )),
+            ),
 
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Clothes yousef sama shams el din hassanin',
+                  widget.productModel.name,
                   style: AppStyle.medium18Black(context)
                       .copyWith(fontWeight: FontWeight.w600),
                   maxLines: 2,
@@ -45,7 +56,7 @@ class _TopSalesItemState extends State<TopSalesItem> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '40\$',
+                      '${widget.productModel.price}\$',
                       style: AppStyle.medium18Black(context).copyWith(
                           fontWeight: FontWeight.w600, color: Colors.grey),
                     ),

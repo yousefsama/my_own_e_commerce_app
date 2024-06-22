@@ -1,44 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 
 class NameAndPrice extends StatelessWidget {
   const NameAndPrice({
     super.key,
+    required this.productModel,
   });
-
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Camisas',
-          style: AppStyle.bold40(context).copyWith(
-            color: Colors.white,
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            productModel.name,
+            style: AppStyle.bold24(context).copyWith(
+              color: Colors.white,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-        ),
-        Row(
-          children: [
-            Text(
-              '40\$',
-              style: AppStyle.bold40(context).copyWith(
-                color: Colors.white,
+          Row(
+            children: [
+              Text(
+                '${productModel.price}\$',
+                style: AppStyle.bold40(context).copyWith(
+                  color: Colors.white,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(
-              '/',
-              style:
-                  AppStyle.medium16grey(context).copyWith(color: Colors.grey),
-            ),
-            Text('Talla',
-                style: AppStyle.medium16grey(context)
-                    .copyWith(color: Colors.grey)),
-          ],
-        )
-      ],
+            ],
+          )
+        ],
+      ),
     );
   }
 }

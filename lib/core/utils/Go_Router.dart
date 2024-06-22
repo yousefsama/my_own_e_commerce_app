@@ -43,10 +43,10 @@ abstract class AppRouter {
         path: forgetPasswordView,
         builder: (context, state) => const ForgetPasswordView(),
       ),
-      GoRoute(
-        path: itemDetailsView,
-        builder: (context, state) => const ItemDetailsView(),
-      ),
+      // GoRoute(
+      //   path: itemDetailsView,
+      //   builder: (context, state) => const ItemDetailsView(),
+      // ),
     ],
   );
 }

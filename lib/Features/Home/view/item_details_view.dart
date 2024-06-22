@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/ItemDetailsViewBody.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/custom_floating_button.dart';
@@ -8,8 +9,8 @@ import 'package:my_own_e_commerce_app/constance.dart';
 import 'package:my_own_e_commerce_app/core/utils/adaptive_layout.dart';
 
 class ItemDetailsView extends StatelessWidget {
-  const ItemDetailsView({super.key});
-
+  const ItemDetailsView({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +33,13 @@ class ItemDetailsView extends StatelessWidget {
         child: const CustomFloatingButton(),
       ),
       body: AdaptiveLayout(
-          mobileLayout: (context) => const ItemDetailsViewBodyMobile(),
-          tabletLayout: (context) => const ItemDetailsViewBodyTablet(),
-          desktopLayout: (context) => const ItemDetailsViewBodyDesktop()),
+          mobileLayout: (context) =>
+              ItemDetailsViewBodyMobile(productModel: productModel),
+          tabletLayout: (context) =>
+              ItemDetailsViewBodyTablet(productModel: productModel),
+          desktopLayout: (context) => ItemDetailsViewBodyDesktop(
+                productModel: productModel,
+              )),
     );
   }
 }

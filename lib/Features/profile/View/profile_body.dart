@@ -21,8 +21,17 @@ class ProfileBody extends StatelessWidget {
             : EdgeInsets.symmetric(
                 horizontal: MediaQuery.sizeOf(context).width * 0.2),
         child: FutureBuilder<DocumentSnapshot>(
-            future: users.doc(FirebaseAuth.instance.currentUser!.uid).get(),
-            builder: (context, snapshot) {
+          future: users.doc(FirebaseAuth.instance.currentUser!.uid).get(),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return const Center(child: Text("Something went wrong"));
+            }
+
+            if (snapshot.hasData && !snapshot.data!.exists) {
+              return const Center(child: Text("Document does not exist"));
+            }
+
+            if (snapshot.connectionState == ConnectionState.done) {
               Map<String, dynamic> data =
                   snapshot.data!.data() as Map<String, dynamic>;
               return CustomScrollView(
@@ -38,8 +47,11 @@ class ProfileBody extends StatelessWidget {
                       height: 20,
                     ),
                   ),
-                  const SliverToBoxAdapter(
-                      child: Flexible(child: ProfileImage())),
+                  SliverToBoxAdapter(
+                      child: Flexible(
+                          child: ProfileImage(
+                    image: data['image'],
+                  ))),
                   const SliverToBoxAdapter(
                     child: SizedBox(
                       height: 20,
@@ -70,7 +82,11 @@ class ProfileBody extends StatelessWidget {
                   const SliverToBoxAdapter(child: MyProfileItemListView()),
                 ],
               );
-            }),
+            }
+
+            return const Center(child: CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }

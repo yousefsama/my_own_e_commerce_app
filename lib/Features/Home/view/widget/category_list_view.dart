@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_own_e_commerce_app/Features/Home/data/models/category_model.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/category_card_item.dart';
+import 'package:my_own_e_commerce_app/constance.dart';
 
 class CategoryListView extends StatefulWidget {
   const CategoryListView({
@@ -15,7 +16,7 @@ class CategoryListView extends StatefulWidget {
 class _CategoryListViewState extends State<CategoryListView> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   CollectionReference category =
-      FirebaseFirestore.instance.collection('category');
+      FirebaseFirestore.instance.collection(CategoryConstance.kcategory);
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,9 @@ class _CategoryListViewState extends State<CategoryListView> {
           if (snapshot.hasData) {
             List<Categorymodel> categorymodelList = [];
             for (var i = 0; i < snapshot.data!.docs.length; i++) {
-              categorymodelList
-                  .add(Categorymodel.fromJson(snapshot.data!.docs[i]));
+              categorymodelList.add(
+                Categorymodel.fromJson(snapshot.data!.docs[i]),
+              );
             }
 
             return SizedBox(
