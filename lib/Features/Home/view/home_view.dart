@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/collection_body.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/manager/category/category_cubit.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/manager/product/product_cubit.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/ItemDetailsViewBody.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/favorite_body_tablet_layout.dart';
 // import 'package:my_own_e_commerce_app/Features/Home/view/widget/cart_body_tablet_layout.dart';
@@ -31,6 +32,7 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     // TODO: implement initState
     BlocProvider.of<CategoryCubit>(context).getCategory();
+    BlocProvider.of<ProductCubit>(context).getProduct();
     super.initState();
   }
 
