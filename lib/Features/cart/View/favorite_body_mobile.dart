@@ -6,8 +6,8 @@ import 'package:my_own_e_commerce_app/core/utils/app_style.dart';
 import 'package:my_own_e_commerce_app/core/utils/assets/assetsImage.dart';
 import 'package:svg_flutter/svg.dart';
 
-class CartBodyMobileLayout extends StatelessWidget {
-  const CartBodyMobileLayout({super.key});
+class FavoriteBodyMobileLayout extends StatelessWidget {
+  const FavoriteBodyMobileLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

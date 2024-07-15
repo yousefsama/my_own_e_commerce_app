@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/manager/reset_cubit/reset_cubit.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/manager/signin_cubit/signin_cubit.dart';
 import 'package:my_own_e_commerce_app/Features/Authentication/view/manager/signup_cubit/signup_cubit.dart';
+import 'package:my_own_e_commerce_app/Features/Home/view/manager/category/category_cubit.dart';
 import 'package:my_own_e_commerce_app/core/utils/Go_Router.dart';
 import 'package:my_own_e_commerce_app/firebase_options.dart';
 import 'package:my_own_e_commerce_app/simple_bloc_observer.dart';
@@ -39,6 +40,7 @@ class ECommerceApp extends StatelessWidget {
         BlocProvider(create: (context) => SigninCubit()),
         BlocProvider(create: (context) => SignupCubit()),
         BlocProvider(create: (context) => ResetCubit()),
+        BlocProvider(create: (context) => CategoryCubit()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

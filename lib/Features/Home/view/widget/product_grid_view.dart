@@ -6,9 +6,9 @@ import 'package:my_own_e_commerce_app/Features/Home/view/widget/product_item.dar
 
 class ProductSliverGridView extends StatefulWidget {
   const ProductSliverGridView({
-    super.key,
+    super.key, 
   });
-
+  
   @override
   State<ProductSliverGridView> createState() => _ProductSliverGridViewState();
 }
@@ -63,7 +63,7 @@ class _ProductSliverGridViewState extends State<ProductSliverGridView> {
               });
         }
 
-        return const Center(child: CircularProgressIndicator());
+        return const  Center(child:  CircularProgressIndicator());
       },
     );
   }

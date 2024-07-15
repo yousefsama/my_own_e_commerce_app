@@ -57,6 +57,7 @@ class _TopSalesGridViewState extends State<TopSalesGridView> {
                     },
                     child: ProductItem(
                       productModel: productmodelList[index],
+                      // docId: product.id ,
                     ));
               });
         }

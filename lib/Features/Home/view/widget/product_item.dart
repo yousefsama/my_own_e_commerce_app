@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/Love_and_notLoveIcon.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/add_to_bag_row.dart';
@@ -9,14 +12,20 @@ class ProductItem extends StatefulWidget {
   const ProductItem({
     super.key,
     required this.productModel,
+    // required this.docId,
   });
   final ProductModel productModel;
+  // final String docId;
   @override
   State<ProductItem> createState() => _ProductItemState();
 }
 
 class _ProductItemState extends State<ProductItem> {
   bool isLoved = false;
+  CollectionReference lovedProduct = FirebaseFirestore.instance
+      .collection('users')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .collection('loved products');
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -64,13 +73,19 @@ class _ProductItemState extends State<ProductItem> {
                         ? GestureDetector(
                             onTap: () {
                               isLoved = false;
-
+                             
                               setState(() {});
                             },
                             child: const LovedIcon())
                         : GestureDetector(
                             onTap: () {
                               isLoved = true;
+                              lovedProduct.add({
+                                "description": widget.productModel.description,
+                                "name": widget.productModel.name,
+                                "price": widget.productModel.price,
+                                "image": widget.productModel.image,
+                              });
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Padding(
