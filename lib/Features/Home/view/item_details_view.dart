@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_own_e_commerce_app/Features/Home/data/models/product_model.dart';
 import 'package:my_own_e_commerce_app/Features/Home/view/widget/ItemDetailsViewBody.dart';
@@ -11,13 +13,23 @@ import 'package:my_own_e_commerce_app/core/utils/adaptive_layout.dart';
 class ItemDetailsView extends StatelessWidget {
   const ItemDetailsView({super.key, required this.productModel});
   final ProductModel productModel;
+
   @override
   Widget build(BuildContext context) {
+    CollectionReference users = FirebaseFirestore.instance.collection('cart');
     return Scaffold(
       backgroundColor: Constance.primaryBackGroundColor,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: GestureDetector(
         onTap: () {
+          users.add({
+            'id': FirebaseAuth.instance.currentUser!.uid,
+            "description": productModel.description,
+            "image": productModel.image,
+            "name": productModel.name,
+            "price": productModel.price,
+          });
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Padding(

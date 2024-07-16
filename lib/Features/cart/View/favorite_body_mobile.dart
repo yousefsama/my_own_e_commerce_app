@@ -30,19 +30,19 @@ class FavoriteBodyMobileLayout extends StatelessWidget {
                 height: 20,
               ),
             ),
-            const CartItemListView(),
+            SliverFillRemaining(child: const CartItemListView()),
             const SliverToBoxAdapter(
               child: SizedBox(height: 30),
             ),
-            SliverToBoxAdapter(
-              child: CustomTextAndArrow(
-                  text: 'Aggregate more products',
-                  icon: SvgPicture.asset(
-                    Assets.imagesArrowRightIcon,
-                    color: Colors.black,
-                  ),
-                  textStyle: AppStyle.bold24(context)),
-            ),
+            //   SliverToBoxAdapter(
+            //     child: CustomTextAndArrow(
+            //         text: 'Aggregate more products',
+            //         icon: SvgPicture.asset(
+            //           Assets.imagesArrowRightIcon,
+            //           color: Colors.black,
+            //         ),
+            //         textStyle: AppStyle.bold24(context)),
+            //   ),
           ],
         ),
       ),

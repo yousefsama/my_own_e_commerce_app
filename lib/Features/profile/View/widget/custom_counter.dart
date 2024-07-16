@@ -25,17 +25,11 @@ class _CustomCounterState extends State<CustomCounter> {
             }
             setState(() {});
           },
-          icon: SvgPicture.asset(Assets.imagesMinus),
-        ),
-        const SizedBox(
-          width: 2,
+          icon: SvgPicture.asset(Assets.imagesMinus, width: 20),
         ),
         Text(
           counter.toString(),
-          style: AppStyle.bold24(context),
-        ),
-        const SizedBox(
-          width: 2,
+          style: AppStyle.medium20(context),
         ),
         IconButton(
           onPressed: () {
@@ -44,7 +38,7 @@ class _CustomCounterState extends State<CustomCounter> {
             }
             setState(() {});
           },
-          icon: SvgPicture.asset(Assets.imagesPlus),
+          icon: SvgPicture.asset(Assets.imagesPlus, width: 20),
         ),
       ],
     );
